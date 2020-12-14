@@ -1,3 +1,15 @@
+/** 
+ * Universidad de La Laguna
+ * Asignatura: Sistemas Operativos
+ * Primer prototipo netcp
+ * @author Ayob Asrout Vargas
+ * @date 14/12/2020
+ * Contact: alu0101350158@ull.edu.es
+ * 
+ * Programa que se encarga de enviar mensajes a otro proceso a traves
+ * de sockets
+ */
+
 #include "netcp.hpp"
 
 int protected_main() {
@@ -7,13 +19,10 @@ int protected_main() {
 
   netcp::Message message;
   size_t count = 1023;
-  std::array<char , 1024> clean_message{};
   sockaddr_in address{netcp::make_ip_address(1024, "127.0.0.1")};
   while ( file_send.read_from_file(&message.text, count) != 0 ) {
     message.text[1023] = '\0';
-    //std::cout << message.text.data() << std::endl;
     socket_send.send_to(message,address);
-    //message.text=clean_message;
   }
   return 0;
 }
