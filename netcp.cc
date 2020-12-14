@@ -1,3 +1,15 @@
+/** 
+ * Universidad de La Laguna
+ * Asignatura: Sistemas Operativos
+ * Primer prototipo netcp
+ * @author Ayob Asrout Vargas
+ * @date 14/12/2020
+ * Contact: alu0101350158@ull.edu.es
+ * 
+ * Namespace que contiene todo lo necesario para la ejecucion tanto de netcp-send
+ * como de netcp-receive
+ */
+
 #include "netcp.hpp"
 /**
  * socket class
